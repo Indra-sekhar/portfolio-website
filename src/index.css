@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-neon-cyan: #00f2ff;
+  --color-neon-purple: #9d00ff;
+  --color-dark-bg: #050505;
+  --color-dark-card: #0d0d0d;
+  --color-dark-border: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-gray-300 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-dark-card border border-dark-border rounded-xl p-6 transition-all duration-300 hover:border-neon-cyan/30;
+  }
+
+  .neon-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple;
+  }
+
+  .neon-button {
+    @apply px-6 py-2 rounded-full border border-neon-cyan text-neon-cyan hover:bg-neon-cyan hover:text-dark-bg transition-all duration-300 font-medium;
+  }
+}
+
